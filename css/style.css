@@ -1,0 +1,27 @@
+footer {
+    height: 60px;
+    text-align: center;
+    margin-top:10%;
+}
+html {
+    font-size: 16px;
+}
+h3 {
+    font-weight: 700;
+}
+.content {
+    margin-top:-1%;
+}
+.nav-lang > ul {
+    width: 80%;
+}
+.ruby i {
+    color: red;
+    margin:1% 1%;
+}
+.lang_specific {
+    margin-top: 2% 2% 0 0;
+    font-size: 1.4em;
+    color: #999;
+    font-family: 'Droid Sans', Helvetica, sans-serif;
+}

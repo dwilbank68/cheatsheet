@@ -4,80 +4,117 @@
 <head>
     <meta charset="UTF-8">
     <title>Ruby-Javascript Cheat Sheet</title>
-    <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <link id="googlefonts-droid-sans-css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans" type="text/css" media="all">
-    <style>
-        html {
-            font-size: 16px;
-        }
-        h3 {
-            font-weight: 700;
-        }
-        .ruby .lang_specific {
-            font-size: 1.4em;
-            color: #999;
-            font-family: 'Droid Sans', Helvetica, sans-serif;
-        }
-    </style>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 </head>
 
 <body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">IdiosynCode</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Credits</a></li>
+                    <li><a href="#">Contribute</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="container-fluid">
-
+        <div class="nav-lang col-md-2">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#">Ruby</a></li>
+                <li><a href="#">Javascript</a></li>
+                <li><a href="#">SQL</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+            </ul>
+        </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-9 content">
                 <div class="ruby">
-
-                    <div class="resize1">
+                    <div>
                         <h3>Ruby Loop</h3>
                         <p>Ruby has additional looping structures (apart from the common For..in and While loops) that are specific in use and aim to be a more semantic approach to a problem. <em>Keep in mind that these can be replicated with the traditional For..in and While loops!</em></p>
+                        <p>
+                            Ruby looping structures accept blocks as arguments. Blocks can be created using either curly brace notation <strong>( ex: { |x| puts x } )</strong> or  <strong>do...end</strong> notation.
+                            Each ruby loop uses a block variable, which is denoted using pipes <strong>( ex: |x| )</strong> and represents
+                            the object being used during each iteration.
+                        </p>
+                        <div class="code">
+                            <div class="lang_specific">Each Loop</div><a href="#"><i class="fa fa-cogs fa-lg"> Example</i></a>
+                            <p>Executes code once for each element in a collection.</p>
+                        
+<pre>
+# shorter route
+array.each { |x| puts x}
 
-                        <div class="lang_specific">Each Loop</div>
-                        <p>Executes code once for each element in a collection.</p>
+# longer route
+array.each do |x|
+  puts x
+end</pre>
+                        </div>
+                        <div class="code">
+                            <div class="lang_specific">Times Loop</div><a href="#"><i class="fa fa-cogs fa-lg"> Example</i></a>
+                            <p>Executes code a given number of times. <em>A Times Loop must be used with a variable containing a number or a number itself.</em></p>
+<pre>
+# shorter route
+10.times { puts "hello world"}
 
-                        <div class="lang_specific">Times Loop</div>
-                        <p>Executes code a given number of times. <em>A Times Loop must be used with a variable containing a number or a number itself.</em></p>
+# longer route
+10.times do |x|
+  puts x
+end
+</pre>
+                            <p><em>Note that the first block excluded a local variable. If used, the local variable in the times loop will represent the number being used at a specific iteration in the loop. This number starts at zero. In the above example, the second times loop would print every number from 0-9.</em></p>
+                        </div>
+                        <div class="code">
+                            <div class="lang_specific">Until Loop</div><a href="#"><i class="fa fa-cogs fa-lg"> Example</i></a>
+                            <p>Executes code <em>until</em> a condition is true. This is the same as a negated while loop. <em>ex: !(while)</em></p>
+<pre>
+# shorter route
+# There is no short route
 
-                        <div class="lang_specific">Until Loop</div>
-                        <p>Executes code <em>until</em> a condition is true. This is the same as a negated while loop. <em>ex: !(while)</em></p>
-                        <div class="lang_specific">Loop Loop</div>
-                        <p>Executes code in an infinite loop.</p>
+until false
+  puts "infinite loop, yo"
+end
+</pre>
+                        </div>
+                        <div class="code">
+                            <div class="lang_specific">Loop Loop</div><a href="#"><i class="fa fa-cogs fa-lg"> Example</i></a>
+                            <p>Executes code in an infinite loop.</p>
+<pre>
+# shorter route
+loop { puts "another infinite loop" }
+
+# longer route 
+loop do 
+  puts "Infinite loop for days..."
+end
+</pre>
+                        </div>
                     </div>
-
-                    <div class="resize1">
-                        <h3>Ruby - Clear An Array</h3>
-                        <p>bla;lskdjf;alskj;lkasdfbla;lskdjf;alskj;lkasdfbla;lskdjf;alskj;lkasdf</p>
-                    </div>
-
                 </div>
                 <!--class="ruby"-->
             </div>
-
-            <div class="col-md-6">
-                <div class="javascript">
-
-                    <div class="resize2">
-                        <h3>Javascript Loop</h3>
-                        <p></p>
-                    </div>
-
-                    <div class="resize2">
-                        <h3>Javascript - Clear An Array</h3>
-                        <p>bla;lskdjf;alskj;lkasdf</p>
-                    </div>
-
-                </div>
-                <!--javascript-->
-            </div>
-
 
         </div>
         <!-- row -->
 
     </div>
     <!-- container-fluid -->
+    <footer>
+        Idiosyncode &copy; 2014
+    </footer>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
